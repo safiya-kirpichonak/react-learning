@@ -1,43 +1,15 @@
-// task 1
+import React from "react";
+import ReactDOM from "react-dom";
 
-// ReactDOM.render(
-//   <div>
-//     <p>Products that I need to buy:</p>
-//     <ul>
-//       <li>12 eggs</li>
-//       <li>3 applies</li>
-//       <li>milk</li>
-//     </ul>
-//   </div>,
-//   document.getElementById("root")
-// );
+const nav = (
+  <nav>
+    <h1>My website</h1>
+    <ul>
+      <li>Pricing</li>
+      <li>About</li>
+      <li>Contact</li>
+    </ul>
+  </nav>
+);
 
-// task 2
-
-// function NavBar() {
-//   return (
-//     <div>
-//       <a>link 1</a>
-//       <a>link 2</a>
-//       <a>link 3</a>
-//     </div>
-//   );
-// }
-
-// ReactDOM.render(<NavBar />, document.getElementById("root"));
-
-// task 3
-
-// imperative way:
-
-// const h1 = document.createElement("h1");
-// h1.textContent = "Hello, React!";
-// h1.className = "header";
-// document.getElementById("root").appendChild(h1);
-
-// declarative way:
-
-// ReactDOM.render(
-//   <h1 class="header">Hello, React!</h1>,
-//   document.getElementById("root")
-// );
+ReactDOM.render(nav, document.getElementById("root"));
