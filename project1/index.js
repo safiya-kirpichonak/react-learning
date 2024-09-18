@@ -1,15 +1,18 @@
-import React from "react";
-import ReactDOM from "react-dom";
+// import React from "react";
+// import ReactDOM from "react-dom";
 
-const nav = (
-  <nav>
-    <h1>My website</h1>
+const content = (
+  <div>
+    <img src="./react-icon.png" alt="logo" />
+    <h1>Fun facts about React</h1>
     <ul>
-      <li>Pricing</li>
-      <li>About</li>
-      <li>Contact</li>
+      <li>Was first released in 2013</li>
+      <li>Was originally created by Jordan Walke</li>
+      <li>Has well over 200K stars on GitHub</li>
+      <li>Is maintained by Meta</li>
+      <li>Powers thousands of enterprise apps, including mobile apps</li>
     </ul>
-  </nav>
+  </div>
 );
 
-ReactDOM.render(nav, document.getElementById("root"));
+ReactDOM.render(content, document.getElementById("root"));

@@ -80,3 +80,44 @@
 // );
 
 // ReactDOM.render(nav, document.getElementById("root"));
+
+// task 6
+
+/*
+It happens because navJSX is object. When you want to write object in JavaScript
+it shows as the string "[object Object]". You need to convert object to JSON format
+to see fields. So append take this string and show it like that.
+*/
+
+// const navJSX = (
+//   <nav>
+//     <h1>My website</h1>
+//     <ul>
+//       <li>Pricing</li>
+//       <li>About</li>
+//       <li>Contact</li>
+//     </ul>
+//   </nav>
+// );
+
+// const root = document.getElementById("root");
+// root.append(navJSX); // [object Object]
+
+// task 7
+
+// import React from "react";
+// import ReactDOM from "react-dom";
+
+const Page = () => {
+  return (
+    <div>
+      <h3>Why I am learning React?</h3>
+      <ul>
+        <li>To improve my technical skills</li>
+        <li>To learn something new about web development</li>
+      </ul>
+    </div>
+  );
+};
+
+ReactDOM.render(<Page />, document.getElementById("root"));
