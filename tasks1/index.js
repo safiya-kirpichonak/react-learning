@@ -112,10 +112,10 @@ const Page = () => {
   return (
     <div>
       <h3>Why I am learning React?</h3>
-      <ul>
+      <ol>
         <li>To improve my technical skills</li>
         <li>To learn something new about web development</li>
-      </ul>
+      </ol>
     </div>
   );
 };
