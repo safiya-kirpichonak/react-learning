@@ -1,6 +1,6 @@
 # React learning [In progress]
 
-### Usage
+### Usage Python
 
 - run each task with Python server:
 
@@ -12,6 +12,16 @@ python3 -m http.server
 
 ```
 http://localhost:8000/
+```
+
+### Usage React
+
+- create React project:
+
+```
+npx create-react-app app-name
+cd ./app-name
+npm start
 ```
 
 ### Resource

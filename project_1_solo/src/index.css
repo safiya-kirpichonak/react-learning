@@ -1,0 +1,83 @@
+* {
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+body {
+  background-color: #222429;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.card {
+  background-color: #191b21;
+  border-radius: 10px;
+  width: 400px;
+  color: #ffffff;
+}
+
+.description {
+  margin: 30px;
+}
+
+main > h1 {
+  text-align: center;
+  margin-top: 10px;
+}
+
+main > h4 {
+  text-align: center;
+  margin-top: 10px;
+  color: #766d6d;
+}
+
+main > h6 {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.main--logo {
+  width: 400px;
+  border-radius: 10px 10px 0 0;
+}
+
+.gmail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 4px;
+  margin: 30px;
+  height: 30px;
+  text-decoration: none;
+  color: #000000;
+}
+
+a > img {
+  margin-right: 5px;
+}
+
+p {
+  width: 100%;
+  word-wrap: break-word;
+  box-sizing: border-box;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: #121214;
+  border-radius: 0 0 10px 10px;
+}
+
+footer > img {
+  width: 30px;
+}

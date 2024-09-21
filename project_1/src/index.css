@@ -43,16 +43,16 @@ main {
   margin: 0;
 }
 
-.main-facts {
+.main--facts {
   margin-top: 40px;
 }
 
-.main-facts > li {
+.main--facts > li {
   line-height: 20px;
   padding-block: 10px;
 }
 
-.main-facts > li::marker {
+.main--facts > li::marker {
   font-size: 20px;
   color: #61dafb;
 }
