@@ -3,7 +3,14 @@ import React from "react";
 import star from "../images/star.svg";
 import cardPhoto from "../images/card1-photo.png";
 
-export default function Card() {
+export default function Card({
+  img,
+  rating,
+  reviewCount,
+  country,
+  title,
+  price,
+}) {
   return (
     <div className="card">
       <img src={cardPhoto} alt="card-photo" />
