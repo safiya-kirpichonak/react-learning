@@ -1,7 +1,5 @@
 import React from "react";
 
-import star from "../images/star.svg";
-
 export default function Card({
   img,
   rating,
@@ -12,9 +10,9 @@ export default function Card({
 }) {
   return (
     <div className="card">
-      <img src={img} alt="card-photo" />
+      <img src={`./images/${img}`} alt="card-photo" />
       <div className="card--rating">
-        <img src={star} alt="star" className="card--rating-logo" />
+        <img src="./images/star.svg" alt="star" className="card--rating-logo" />
         <span>{rating}</span>
         <span className="grey-text">({reviewCount})</span>
         <span className="grey-text"> {country}</span>
