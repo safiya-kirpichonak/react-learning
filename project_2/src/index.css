@@ -51,7 +51,18 @@ section {
 
 .card {
   width: 240px;
+  display: flex;
+  flex: 0 0 auto;
   font-size: 15px;
+  position: relative;
+  flex-direction: column;
+}
+
+.cards-list {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  overflow-x: auto;
 }
 
 .card > img {
@@ -66,4 +77,14 @@ section {
 
 .card--rating-logo {
   height: 10px;
+}
+
+.card--badge {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  background-color: white;
+  padding: 5px 7px;
+  border-radius: 2px;
+  font-weight: bold;
 }
