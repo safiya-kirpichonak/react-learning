@@ -145,149 +145,21 @@
 
 // task "Messages"
 
-// function App() {
-//   const [messages] = React.useState([]);
-
-//   return (
-//     <div>
-//       {messages.length === 0 ? (
-//         <h1>You are all caught up!</h1>
-//       ) : (
-//         <h1>
-//           You have {messages.length} unread{" "}
-//           {messages.length === 1 ? "message" : "messages"}!
-//         </h1>
-//       )}
-//     </div>
-//   );
-// }
-
-// ReactDOM.render(<App />, document.getElementById("root"));
-
-// task "Form"
-
-function Form() {
-  const [formData, setFormData] = React.useState({
-    employmentStatus: "",
-    isFriendly: true,
-    firstName: "",
-    lastName: "",
-    favColor: "",
-    comment: "",
-    email: "",
-  });
-
-  console.log(formData);
-
-  function handleChange(event) {
-    const { value, name, type, checked } = event.target;
-    setFormData((oldFormData) => ({
-      ...oldFormData,
-      [name]: type === "checkbox" ? checked : value,
-    }));
-  }
+function App() {
+  const [messages] = React.useState([]);
 
   return (
-    <form>
-      <input
-        type="text"
-        placeholder="First name"
-        onChange={handleChange}
-        name="firstName"
-        value={formData.firstName}
-      />
-      <br />
-
-      <input
-        type="text"
-        placeholder="Last name"
-        onChange={handleChange}
-        name="lastName"
-        value={formData.lastName}
-      />
-      <br />
-
-      <input
-        type="text"
-        placeholder="Email"
-        onChange={handleChange}
-        name="email"
-        value={formData.email}
-      />
-      <br />
-
-      <textarea
-        placeholder="Comment"
-        onChange={handleChange}
-        name="comment"
-        value={formData.comment}
-      />
-      <br />
-
-      <input
-        type="checkbox"
-        id="isFriendly"
-        name="isFriendly"
-        onChange={handleChange}
-        checked={formData.isFriendly}
-      />
-      <label htmlFor="isFriendly">Are you friendly?</label>
-      <br />
-      <br />
-
-      <fieldset>
-        <legend>Current employment status:</legend>
-        <input
-          type="radio"
-          id="unemployed"
-          name="employmentStatus"
-          value="unemployed"
-          onChange={handleChange}
-          checked={formData.employmentStatus === "unemployed"}
-        />
-        <label htmlFor="unemployed">Unemployed</label>
-        <br />
-        <input
-          type="radio"
-          id="part-time"
-          name="employmentStatus"
-          value="part-time"
-          onChange={handleChange}
-          checked={formData.employmentStatus === "part-time"}
-        />
-        <label htmlFor="part-time">Part-time</label>
-        <br />
-        <input
-          type="radio"
-          id="full-time"
-          name="employmentStatus"
-          value="full-time"
-          checked={formData.employmentStatus === "full-time"}
-          onChange={handleChange}
-        />
-        <label htmlFor="full-time">Full-time</label>
-      </fieldset>
-      <br />
-
-      <label htmlFor="favColor">What is your favorite color?</label>
-      <br />
-      <select
-        id="favColor"
-        name="favColor"
-        onChange={handleChange}
-        value={formData.favColor}
-      >
-        <option value="">-- Chose --</option>
-        <option value="red">Red</option>
-        <option value="white">White</option>
-        <option value="black">Black</option>
-      </select>
-      <br />
-      <br />
-
-      <button></button>
-    </form>
+    <div>
+      {messages.length === 0 ? (
+        <h1>You are all caught up!</h1>
+      ) : (
+        <h1>
+          You have {messages.length} unread{" "}
+          {messages.length === 1 ? "message" : "messages"}!
+        </h1>
+      )}
+    </div>
   );
 }
 
-ReactDOM.render(<Form />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));

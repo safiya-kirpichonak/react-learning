@@ -64,32 +64,32 @@
 
 // task "Boxes"
 
-const boxesData = [
-  {
-    id: 1,
-    on: true,
-  },
-  {
-    id: 2,
-    on: false,
-  },
-  {
-    id: 3,
-    on: true,
-  },
-  {
-    id: 4,
-    on: true,
-  },
-  {
-    id: 5,
-    on: false,
-  },
-  {
-    id: 6,
-    on: false,
-  },
-];
+// const boxesData = [
+//   {
+//     id: 1,
+//     on: true,
+//   },
+//   {
+//     id: 2,
+//     on: false,
+//   },
+//   {
+//     id: 3,
+//     on: true,
+//   },
+//   {
+//     id: 4,
+//     on: true,
+//   },
+//   {
+//     id: 5,
+//     on: false,
+//   },
+//   {
+//     id: 6,
+//     on: false,
+//   },
+// ];
 
 // way 1
 
@@ -112,37 +112,252 @@ const boxesData = [
 //   );
 // }
 
-function Box({ id, on, toggle }) {
-  return (
-    <div
-      onClick={() => toggle(id)}
-      style={{
-        margin: "10px",
-        width: "100px",
-        height: "100px",
-        border: "1px solid black",
-        backgroundColor: on ? "black" : null,
-      }}
-    ></div>
-  );
-}
+// function Box({ id, on, toggle }) {
+//   return (
+//     <div
+//       onClick={() => toggle(id)}
+//       style={{
+//         margin: "10px",
+//         width: "100px",
+//         height: "100px",
+//         border: "1px solid black",
+//         backgroundColor: on ? "black" : null,
+//       }}
+//     ></div>
+//   );
+// }
+
+// function App() {
+//   const [boxes, setBoxes] = React.useState(boxesData);
+
+//   // way 2
+//   function toggle(id) {
+//     setBoxes((oldBoxes) => {
+//       return oldBoxes.map((oldBox) =>
+//         oldBox.id === id ? { ...oldBox, on: !oldBox.on } : oldBox
+//       );
+//     });
+//   }
+
+//   const boxesHTML = boxes.map((box) => (
+//     <Box key={box.id} id={box.id} on={box.on} toggle={toggle} />
+//   ));
+//   return <main>{boxesHTML}</main>;
+// }
+
+// ReactDOM.render(<App />, document.getElementById("root"));
+
+// task "Form"
+
+// function Form() {
+//   const [formData, setFormData] = React.useState({
+//     employmentStatus: "",
+//     isFriendly: true,
+//     firstName: "",
+//     lastName: "",
+//     favColor: "",
+//     comment: "",
+//     email: "",
+//   });
+
+//   function handleChange(event) {
+//     const { value, name, type, checked } = event.target;
+//     setFormData((oldFormData) => ({
+//       ...oldFormData,
+//       [name]: type === "checkbox" ? checked : value,
+//     }));
+//   }
+
+//   function handleSubmit(event) {
+//     event.preventDefault();
+//     // submitApi(formData);
+//     console.log(formData);
+//   }
+
+//   return (
+//     <form onSubmit={handleSubmit}>
+//       <input
+//         type="text"
+//         placeholder="First name"
+//         onChange={handleChange}
+//         name="firstName"
+//         value={formData.firstName}
+//       />
+//       <br />
+
+//       <input
+//         type="text"
+//         placeholder="Last name"
+//         onChange={handleChange}
+//         name="lastName"
+//         value={formData.lastName}
+//       />
+//       <br />
+
+//       <input
+//         type="text"
+//         placeholder="Email"
+//         onChange={handleChange}
+//         name="email"
+//         value={formData.email}
+//       />
+//       <br />
+
+//       <textarea
+//         placeholder="Comment"
+//         onChange={handleChange}
+//         name="comment"
+//         value={formData.comment}
+//       />
+//       <br />
+
+//       <input
+//         type="checkbox"
+//         id="isFriendly"
+//         name="isFriendly"
+//         onChange={handleChange}
+//         checked={formData.isFriendly}
+//       />
+//       <label htmlFor="isFriendly">Are you friendly?</label>
+//       <br />
+//       <br />
+
+//       <fieldset>
+//         <legend>Current employment status:</legend>
+//         <input
+//           type="radio"
+//           id="unemployed"
+//           name="employmentStatus"
+//           value="unemployed"
+//           onChange={handleChange}
+//           checked={formData.employmentStatus === "unemployed"}
+//         />
+//         <label htmlFor="unemployed">Unemployed</label>
+//         <br />
+//         <input
+//           type="radio"
+//           id="part-time"
+//           name="employmentStatus"
+//           value="part-time"
+//           onChange={handleChange}
+//           checked={formData.employmentStatus === "part-time"}
+//         />
+//         <label htmlFor="part-time">Part-time</label>
+//         <br />
+//         <input
+//           type="radio"
+//           id="full-time"
+//           name="employmentStatus"
+//           value="full-time"
+//           checked={formData.employmentStatus === "full-time"}
+//           onChange={handleChange}
+//         />
+//         <label htmlFor="full-time">Full-time</label>
+//       </fieldset>
+//       <br />
+
+//       <label htmlFor="favColor">What is your favorite color?</label>
+//       <br />
+//       <select
+//         id="favColor"
+//         name="favColor"
+//         onChange={handleChange}
+//         value={formData.favColor}
+//       >
+//         <option value="">-- Chose --</option>
+//         <option value="red">Red</option>
+//         <option value="white">White</option>
+//         <option value="black">Black</option>
+//       </select>
+//       <br />
+//       <br />
+
+//       <button>Submit</button>
+//     </form>
+//   );
+// }
+
+// ReactDOM.render(<Form />, document.getElementById("root"));
+
+// task "Submit form"
 
 function App() {
-  const [boxes, setBoxes] = React.useState(boxesData);
+  /**
+   * Challenge: Connect the form to local state
+   *
+   * 3. When the user clicks "Sign up", check if the
+   *    password & confirmation match each other. If
+   *    so, log "Successfully signed up" to the console.
+   *    If not, log "passwords to not match" to the console.
+   * 4. Also when submitting the form, if the person checked
+   *    the "newsletter" checkbox, log "Thanks for signing
+   *    up for our newsletter!" to the console.
+   */
+  const [formData, setFormData] = React.useState({
+    email: "",
+    password: "",
+    isJoinNewsletter: false,
+    passwordConfirmation: "",
+  });
 
-  // way 2
-  function toggle(id) {
-    setBoxes((oldBoxes) => {
-      return oldBoxes.map((oldBox) =>
-        oldBox.id === id ? { ...oldBox, on: !oldBox.on } : oldBox
-      );
-    });
+  function handleChange(event) {
+    const { name, checked, type, value } = event.target;
+    setFormData((oldFormData) => ({
+      ...oldFormData,
+      [name]: type === "checkbox" ? checked : value,
+    }));
   }
 
-  const boxesHTML = boxes.map((box) => (
-    <Box key={box.id} id={box.id} on={box.on} toggle={toggle} />
-  ));
-  return <main>{boxesHTML}</main>;
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    const isPasswordCorrect =
+      formData.password === formData.passwordConfirmation;
+
+    console.log(
+      isPasswordCorrect ? "Successfully signed up" : "passwords to not match"
+    );
+
+    if (formData.isJoinNewsletter && isPasswordCorrect)
+      console.log("Thanks for signing up for our newsletter!");
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="email"
+        placeholder="Email address"
+        name="email"
+        value={formData.email}
+        onChange={handleChange}
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        name="password"
+        value={formData.password}
+        onChange={handleChange}
+      />
+      <input
+        type="password"
+        placeholder="Confirm password"
+        value={formData.passwordConfirmation}
+        name="passwordConfirmation"
+        onChange={handleChange}
+      />
+      <div>
+        <input
+          id="okayToEmail"
+          type="checkbox"
+          name="isJoinNewsletter"
+          checked={formData.isJoinNewsletter}
+          onChange={handleChange}
+        />
+        <label htmlFor="okayToEmail">I want to join the newsletter</label>
+      </div>
+      <button>Sign up</button>
+    </form>
+  );
 }
 
 ReactDOM.render(<App />, document.getElementById("root"));
