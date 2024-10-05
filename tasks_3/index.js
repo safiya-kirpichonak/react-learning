@@ -281,71 +281,139 @@
 
 // task "Submit form"
 
+// function App() {
+//   const [formData, setFormData] = React.useState({
+//     email: "",
+//     password: "",
+//     isJoinNewsletter: false,
+//     passwordConfirmation: "",
+//   });
+
+//   function handleChange(event) {
+//     const { name, checked, type, value } = event.target;
+//     setFormData((oldFormData) => ({
+//       ...oldFormData,
+//       [name]: type === "checkbox" ? checked : value,
+//     }));
+//   }
+
+//   function handleSubmit(event) {
+//     event.preventDefault();
+
+//     const isPasswordCorrect =
+//       formData.password === formData.passwordConfirmation;
+
+//     console.log(
+//       isPasswordCorrect ? "Successfully signed up" : "passwords to not match"
+//     );
+
+//     if (formData.isJoinNewsletter && isPasswordCorrect)
+//       console.log("Thanks for signing up for our newsletter!");
+//   }
+
+//   return (
+//     <form onSubmit={handleSubmit}>
+//       <input
+//         type="email"
+//         placeholder="Email address"
+//         name="email"
+//         value={formData.email}
+//         onChange={handleChange}
+//       />
+//       <input
+//         type="password"
+//         placeholder="Password"
+//         name="password"
+//         value={formData.password}
+//         onChange={handleChange}
+//       />
+//       <input
+//         type="password"
+//         placeholder="Confirm password"
+//         value={formData.passwordConfirmation}
+//         name="passwordConfirmation"
+//         onChange={handleChange}
+//       />
+//       <div>
+//         <input
+//           id="okayToEmail"
+//           type="checkbox"
+//           name="isJoinNewsletter"
+//           checked={formData.isJoinNewsletter}
+//           onChange={handleChange}
+//         />
+//         <label htmlFor="okayToEmail">I want to join the newsletter</label>
+//       </div>
+//       <button>Sign up</button>
+//     </form>
+//   );
+// }
+
+// ReactDOM.render(<App />, document.getElementById("root"));
+
+// task "working with API"
+
+// function App() {
+//   const [starWarsData, setStarWarsData] = React.useState({});
+//   const [characterNumber, setCharacterNumber] = React.useState(1);
+
+//   function handleClick() {
+//     setCharacterNumber((oldCharacterNumber) => oldCharacterNumber + 1);
+//   }
+
+//   React.useEffect(
+//     function () {
+//       fetch(`https://swapi.dev/api/people/${characterNumber}`)
+//         .then((res) => res.json())
+//         .then((data) => setStarWarsData(data));
+//     },
+//     [characterNumber]
+//   );
+
+//   return (
+//     <div>
+//       <button onClick={handleClick}>Get next character</button>
+//       <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
+//     </div>
+//   );
+// }
+
+// ReactDOM.render(<App />, document.getElementById("root"));
+
+// task "window tracker"
+
+function WindowTracker() {
+  const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
+
+  React.useEffect(() => {
+    function watchWidth() {
+      console.log("Setting up...");
+      setWindowWidth(window.innerHeight);
+    }
+
+    window.addEventListener("resize", watchWidth);
+
+    return function () {
+      console.log("Cleaning up...");
+      window.removeEventListener("resize", watchWidth);
+    };
+  }, []);
+
+  return <h1>Window width: {windowWidth}</h1>;
+}
+
 function App() {
-  const [formData, setFormData] = React.useState({
-    email: "",
-    password: "",
-    isJoinNewsletter: false,
-    passwordConfirmation: "",
-  });
+  const [isShow, setIsShow] = React.useState(true);
 
-  function handleChange(event) {
-    const { name, checked, type, value } = event.target;
-    setFormData((oldFormData) => ({
-      ...oldFormData,
-      [name]: type === "checkbox" ? checked : value,
-    }));
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-
-    const isPasswordCorrect =
-      formData.password === formData.passwordConfirmation;
-
-    console.log(
-      isPasswordCorrect ? "Successfully signed up" : "passwords to not match"
-    );
-
-    if (formData.isJoinNewsletter && isPasswordCorrect)
-      console.log("Thanks for signing up for our newsletter!");
+  function handlerClick() {
+    setIsShow((oldIsShow) => !oldIsShow);
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="email"
-        placeholder="Email address"
-        name="email"
-        value={formData.email}
-        onChange={handleChange}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        name="password"
-        value={formData.password}
-        onChange={handleChange}
-      />
-      <input
-        type="password"
-        placeholder="Confirm password"
-        value={formData.passwordConfirmation}
-        name="passwordConfirmation"
-        onChange={handleChange}
-      />
-      <div>
-        <input
-          id="okayToEmail"
-          type="checkbox"
-          name="isJoinNewsletter"
-          checked={formData.isJoinNewsletter}
-          onChange={handleChange}
-        />
-        <label htmlFor="okayToEmail">I want to join the newsletter</label>
-      </div>
-      <button>Sign up</button>
-    </form>
+    <div className="container">
+      <button onClick={handlerClick}>Toggle WindowTracker</button>
+      {isShow && <WindowTracker />}
+    </div>
   );
 }
 
