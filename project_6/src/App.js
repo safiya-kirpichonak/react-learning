@@ -13,7 +13,6 @@ export default function App() {
     for (const dice of dices)
       if (!dice.isHeld || diceNumber !== dice.value) return;
 
-    console.log("Won");
     setTenzies(true);
   }, [dices]);
 
